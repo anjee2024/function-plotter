@@ -1630,7 +1630,7 @@ class FunctionPlotter(QMainWindow):
                 port = int(self.tcp_port_input.text())
                 self.modbus_client = ModbusTcpClient(host, port=port)
             else:
-                port = self.rtu_port_input.text().strip()
+                port = self.rtu_port_input.currentData() or self.rtu_port_input.currentText().strip()
                 baudrate = int(self.rtu_baudrate_input.currentText())
                 bytesize = int(self.rtu_databits_input.currentText())
                 stopbits = int(self.rtu_stopbits_input.currentText())
